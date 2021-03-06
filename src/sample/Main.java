@@ -23,6 +23,7 @@ import java.util.List;
 public class Main extends Application {
 
     List<Telebook> listaNumerow = new LinkedList<>();
+    List<Telebook> listaZnalezionychNumerow = new LinkedList<>();
     Stage primaryStage;
     Label emptyLabel = new Label("");
 
@@ -102,6 +103,38 @@ public class Main extends Application {
         return siatka;
     }
 
+    public GridPane szukajKontakt(GridPane siatka){
+        Label szukaj = new Label("Wpisz imię, którego szukasz ");
+        TextField szukajImie = new TextField("podaj imię ");
+        Button szukajButton = new Button("Szukaj");
+        szukajButton.setOnAction(e -> {
+            for (Telebook l : listaNumerow) {
+                if (szukajImie.getText().equals(l.getImie())) {
+                    System.out.println("found");
+                    listaZnalezionychNumerow.add(l);
+                }
+           }
+            refreshScene();
+        });
+        GridPane.setConstraints(szukaj,1,12);
+        GridPane.setConstraints(szukajImie,1,13);
+        GridPane.setConstraints(szukajButton,1,14);
+        siatka.getChildren().addAll(szukaj,szukajImie,szukajButton);
+        return siatka;
+    }
+
+    public GridPane listaZnalezionychKontaktow(GridPane siatka){
+        System.out.println("uzupelniono szukane kontakty");
+        int rowIndex = 1;
+        for(Telebook l: listaZnalezionychNumerow) {
+            Label listaLabela = new Label(rowIndex  + ". " + l.getImie() + " " + l.getNumer());
+            siatka.getChildren().add(listaLabela);
+            siatka.setConstraints(listaLabela, 3, rowIndex+2);
+            rowIndex++;
+        }
+        return siatka;
+    }
+
     public GridPane zakoncz(GridPane siatka){
         Image zdjecieTelefonuKoniec = new Image(getClass().getResourceAsStream("telefon.jpg"),50,40,true,false);
         Button zakoncz = new Button("Zakończ", new ImageView(zdjecieTelefonuKoniec));
@@ -112,7 +145,7 @@ public class Main extends Application {
             }
         });
         GridPane.setConstraints(zakoncz,1,100);
-        GridPane.setConstraints(emptyLabel,1,11);
+        GridPane.setConstraints(emptyLabel,1,15);
         siatka.getChildren().addAll(emptyLabel,zakoncz);
         return siatka;
     }
@@ -122,6 +155,8 @@ public class Main extends Application {
         siatka = dodajDoListy(siatka);
         siatka = biezacaLista(siatka);
         siatka = usunZListy(siatka);
+        siatka = szukajKontakt(siatka);
+        siatka = listaZnalezionychKontaktow(siatka);
         siatka = zakoncz(siatka);
         return new Scene(siatka, 600,600);    }
 
@@ -132,8 +167,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        //var siatka = new GridPane();
-        //var scene = new Scene(siatka,600,600);
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Telebook");
         Image icon = new Image(getClass().getResourceAsStream("sluchawka.png"));

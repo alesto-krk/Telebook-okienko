@@ -16,7 +16,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,7 +24,6 @@ public class Main extends Application {
     List<Telebook> listaNumerow = new LinkedList<>();
     List<Telebook> listaZnalezionychNumerow = new LinkedList<>();
     Stage primaryStage;
-    Label emptyLabel = new Label("");
 
     public GridPane dodajDoListy(GridPane siatka){
         //TYTUŁ
@@ -33,8 +31,10 @@ public class Main extends Application {
         Label title = new Label("TELEBOOK", new ImageView(zdjecieTelefonu));
         title.setFont(Font.font(30));
         title.setTextFill(Color.ORANGERED);
+        Label emptyTitleLabel = new Label("");
         GridPane.setConstraints(title,1,1);
-        siatka.getChildren().add(title);
+        GridPane.setConstraints(emptyTitleLabel,1,2);
+        siatka.getChildren().addAll(title,emptyTitleLabel);
         //DODAJ
         Label wpiszImie = new Label("Wpisz imie:");
         TextField imie = new TextField("wpisz imie");
@@ -51,11 +51,11 @@ public class Main extends Application {
                refreshScene();
             }
         });
-        GridPane.setConstraints(wpiszImie,1,2);
-        GridPane.setConstraints(imie,1,3);
-        GridPane.setConstraints(wpiszNr,1,4);
-        GridPane.setConstraints(telefon,1,5);
-        GridPane.setConstraints(dodaj,1,6);
+        GridPane.setConstraints(wpiszImie,1,10);
+        GridPane.setConstraints(imie,1,11);
+        GridPane.setConstraints(wpiszNr,1,12);
+        GridPane.setConstraints(telefon,1,13);
+        GridPane.setConstraints(dodaj,1,14);
         siatka.getChildren().addAll(wpiszImie,imie,wpiszNr,telefon,dodaj);
         return siatka;
     }
@@ -72,7 +72,6 @@ public class Main extends Application {
                 siatka.setConstraints(listaLabela, 2, rowIndex+2);
                 rowIndex++;
             }
-
         });
         GridPane.setConstraints(listaNumerowButton,2,2);
         siatka.getChildren().add(listaNumerowButton);
@@ -91,40 +90,43 @@ public class Main extends Application {
                     listaNumerow.remove(l);    //TU SIE WYKRZACZA JAK SIE WPISZE W USUN PIERWSZE IMIE Z LISTY, JAK NASTEPNE TO OK
                     }
             }
-            /*for(Telebook l: listaNumerow){
-                System.out.println(l.getImie());
-            }*/
             refreshScene();
         });
-        GridPane.setConstraints(usun,1,8);
-        GridPane.setConstraints(usunImie,1,9);
-        GridPane.setConstraints(usunButton,1,10);
+        GridPane.setConstraints(usun,1,20);
+        GridPane.setConstraints(usunImie,1,21);
+        GridPane.setConstraints(usunButton,1,22);
         siatka.getChildren().addAll(usun,usunImie,usunButton);
         return siatka;
     }
 
     public GridPane szukajKontakt(GridPane siatka){
-        Label szukaj = new Label("Wpisz imię, którego szukasz ");
+        Label szukaj = new Label("Wpisz imię, którego szukasz lub jego fragment");
         TextField szukajImie = new TextField("podaj imię ");
-        Button szukajButton = new Button("Szukaj");
+        Image zdjecieLupy = new Image(getClass().getResourceAsStream("lupa.jpg"),40,40 ,true,false);
+        Button szukajButton = new Button("Szukaj", new ImageView(zdjecieLupy));
         szukajButton.setOnAction(e -> {
+            listaZnalezionychNumerow.clear();
             for (Telebook l : listaNumerow) {
-                if (szukajImie.getText().equals(l.getImie())) {
+                if (l.getImie().toLowerCase().contains(szukajImie.getText().toLowerCase())) {
                     System.out.println("found");
                     listaZnalezionychNumerow.add(l);
                 }
            }
             refreshScene();
         });
-        GridPane.setConstraints(szukaj,1,12);
-        GridPane.setConstraints(szukajImie,1,13);
-        GridPane.setConstraints(szukajButton,1,14);
+
+        GridPane.setConstraints(szukaj,1,30);
+        GridPane.setConstraints(szukajImie,1,31);
+        GridPane.setConstraints(szukajButton,1,32);
         siatka.getChildren().addAll(szukaj,szukajImie,szukajButton);
         return siatka;
     }
 
     public GridPane listaZnalezionychKontaktow(GridPane siatka){
-        System.out.println("uzupelniono szukane kontakty");
+        Label znaleziono = new Label("Znaleziono:");
+        znaleziono.setTextFill(Color.PERU);
+        siatka.getChildren().add(znaleziono);
+        siatka.setConstraints(znaleziono, 3, 2);
         int rowIndex = 1;
         for(Telebook l: listaZnalezionychNumerow) {
             Label listaLabela = new Label(rowIndex  + ". " + l.getImie() + " " + l.getNumer());
@@ -144,9 +146,10 @@ public class Main extends Application {
                 Platform.exit();
             }
         });
+        Label emptyFinishLabel = new Label("");
         GridPane.setConstraints(zakoncz,1,100);
-        GridPane.setConstraints(emptyLabel,1,15);
-        siatka.getChildren().addAll(emptyLabel,zakoncz);
+        GridPane.setConstraints(emptyFinishLabel,1,90);
+        siatka.getChildren().addAll(emptyFinishLabel,zakoncz);
         return siatka;
     }
 
@@ -158,7 +161,7 @@ public class Main extends Application {
         siatka = szukajKontakt(siatka);
         siatka = listaZnalezionychKontaktow(siatka);
         siatka = zakoncz(siatka);
-        return new Scene(siatka, 600,600);    }
+        return new Scene(siatka, 600,600, Color.LIGHTGOLDENRODYELLOW);    }
 
         public void refreshScene(){
         primaryStage.setScene(homeScene());

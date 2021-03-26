@@ -25,8 +25,7 @@ public class Main extends Application {
     List<Telebook> listaZnalezionychNumerow = new LinkedList<>();
     Stage primaryStage;
 
-    public GridPane dodajDoListy(GridPane siatka){
-        //TYTUŁ
+    public GridPane tytul(GridPane siatka){
         Image zdjecieTelefonu = new Image(getClass().getResourceAsStream("telefon.jpg"),250,200,true,false);
         Label title = new Label("TELEBOOK", new ImageView(zdjecieTelefonu));
         title.setFont(Font.font(30));
@@ -35,7 +34,10 @@ public class Main extends Application {
         GridPane.setConstraints(title,1,1);
         GridPane.setConstraints(emptyTitleLabel,1,2);
         siatka.getChildren().addAll(title,emptyTitleLabel);
-        //DODAJ
+        return siatka;
+    }
+
+    public GridPane dodajDoListy(GridPane siatka){
         Label wpiszImie = new Label("Wpisz imie:");
         TextField imie = new TextField("wpisz imie");
         Label wpiszNr = new Label("Wpisz numer telefonu:");
@@ -155,6 +157,7 @@ public class Main extends Application {
 
     public Scene homeScene(){
         var siatka = new GridPane();
+        siatka = tytul(siatka);
         siatka = dodajDoListy(siatka);
         siatka = biezacaLista(siatka);
         siatka = usunZListy(siatka);
@@ -167,14 +170,16 @@ public class Main extends Application {
         primaryStage.setScene(homeScene());
         }
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Telebook");
         Image icon = new Image(getClass().getResourceAsStream("sluchawka.png"));
         primaryStage.getIcons().add(icon);
-        primaryStage.setScene(homeScene());
+        //primaryStage.setScene(homeScene());
+        primaryStage.setScene(new Scene(root, 700,500));
         primaryStage.show();
     }
 

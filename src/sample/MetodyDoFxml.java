@@ -29,7 +29,8 @@ public class MetodyDoFxml {
     @FXML
     private TextField numerTelefonu;
     @FXML
-    private Label tooo;
+    private Label label1, label2;
+    // List<Label> biezacaListaLabela;
 
     public void dodajDoListy(ActionEvent e){
         System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
@@ -41,10 +42,11 @@ public class MetodyDoFxml {
     }
     }
 
-    public void biezacaLista(){     //NIE DZIAALA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public void biezacaLista(ActionEvent e){     //NIE DZIAALA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //System.out.println("uzupelniono listę");
-        tooo.setText("Nie dziala");
-
+        //System.out.println(listaNumerow.get(1).getImie());
+        //label1.setText(listaNumerow.get(0).getImie());
+        //label1.setText("dupa");
 /*
         int rowIndex = 1;
         for(Telebook l: listaNumerow) {
@@ -53,9 +55,24 @@ public class MetodyDoFxml {
             System.out.println(l.getImie());
             rowIndex++;
         }
+         int rowIndex = 1;
+            for(Telebook l: listaNumerow) {
+                Label listaLabela = new Label(rowIndex  + ". " + l.getImie() + " " + l.getNumer());
+                siatka.getChildren().add(listaLabela);
+                siatka.setConstraints(listaLabela, 2, rowIndex+2);
+                rowIndex++;
+            }
 */
 
     }
+
+    public void nateraz(){
+        label1.setText(listaNumerow.get(0).getImie());
+        label2.setText(listaNumerow.get(1).getImie());
+        //biezacaListaLabela...........
+    }
+
+
     public void przelaczDoListyKontakow(ActionEvent event) throws IOException {
         System.out.println("przelaczono");
         Parent root = FXMLLoader.load(getClass().getResource("listaKontaktow.fxml"));

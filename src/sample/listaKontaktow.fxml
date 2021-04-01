@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MetodyDoFxml">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ScenaListaKontaktow">
    <children>
       <Button mnemonicParsing="false" onAction="#biezacaLista" text="Bieżąca lista kontaktów">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Button>
-      <Label fx:id="label1" />
+      <Label fx:id="imieZKsiazki" />
    </children>
 </VBox>

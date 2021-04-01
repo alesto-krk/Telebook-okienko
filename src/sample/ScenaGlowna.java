@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MetodyDoFxml {
+public class ScenaGlowna {
 
     List<Telebook> listaNumerow = new LinkedList<>();
     private Stage stage;
@@ -25,7 +25,7 @@ public class MetodyDoFxml {
     //private Parent root;
 
     @FXML
-    private TextField imie;
+    private TextField imie;             //----> to
     @FXML
     private TextField numerTelefonu;
     @FXML
@@ -39,7 +39,7 @@ public class MetodyDoFxml {
         numerTelefonu.clear();
         for(Telebook l: listaNumerow) {
             System.out.println(l.getImie());
-    }
+        }
     }
 
     public void biezacaLista(ActionEvent e){     //NIE DZIAALA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

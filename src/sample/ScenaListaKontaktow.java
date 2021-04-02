@@ -9,6 +9,6 @@ public class ScenaListaKontaktow {
     Label imieZKsiazki;
 
     public void displayName(String imieScena2){
-        imieZKsiazki.setText(imieScena2);
+        imieZKsiazki.setText("halo " + imieScena2);
     }
 }

@@ -22,7 +22,7 @@ public class ScenaGlowna {
     List<Telebook> listaNumerow = new LinkedList<>();
     private Stage stage;
     private Scene scene;
-    //private Parent root;
+    private Parent root;
 
     @FXML
     private TextField imie;             //----> to
@@ -35,51 +35,56 @@ public class ScenaGlowna {
     public void dodajDoListy(ActionEvent e){
         System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
         listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
-        imie.clear();
-        numerTelefonu.clear();
+        //imie.clear();
+        //numerTelefonu.clear();
         for(Telebook l: listaNumerow) {
             System.out.println(l.getImie());
         }
     }
 
-    public void biezacaLista(ActionEvent e){     //NIE DZIAALA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //System.out.println("uzupelniono listę");
-        //System.out.println(listaNumerow.get(1).getImie());
-        //label1.setText(listaNumerow.get(0).getImie());
-        //label1.setText("dupa");
-/*
-        int rowIndex = 1;
-        for(Telebook l: listaNumerow) {
-            tooo.setText(l.getImie());
-            //tooo = new Label(rowIndex  + ". " + l.getImie() + " " + l.getNumer());
-            System.out.println(l.getImie());
-            rowIndex++;
-        }
-         int rowIndex = 1;
-            for(Telebook l: listaNumerow) {
-                Label listaLabela = new Label(rowIndex  + ". " + l.getImie() + " " + l.getNumer());
-                siatka.getChildren().add(listaLabela);
-                siatka.setConstraints(listaLabela, 2, rowIndex+2);
-                rowIndex++;
-            }
+    /*public void biezacaLista(ActionEvent e){     //NIE DZIAALA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        String imieScena2 = imie.getText();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("listaKontaktow.fxml"));
+        root2Sceny = loader.load();
+
+
+    }
 */
-
-    }
-
-    public void nateraz(){
+   /* public void nateraz(){
         label1.setText(listaNumerow.get(0).getImie());
         label2.setText(listaNumerow.get(1).getImie());
         //biezacaListaLabela...........
     }
 
+    */
+
 
     public void przelaczDoListyKontakow(ActionEvent event) throws IOException {
+        String imieScena2 = imie.getText();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("listaKontaktow.fxml"));
+        root = loader.load();
+
+        ScenaListaKontaktow scene2Controller = loader.getController();
+        scene2Controller.displayName(imieScena2);
+        //root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
         System.out.println("przelaczono");
+        /*
         Parent root = FXMLLoader.load(getClass().getResource("listaKontaktow.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+         */
     }
 
     public void zakoncz(){

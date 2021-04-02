@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MetodyDoFxml">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ScenaGlowna">
    <bottom>
       <Button mnemonicParsing="false" onAction="#zakoncz" text="Zakończ" BorderPane.alignment="CENTER" />
    </bottom>
@@ -57,11 +57,6 @@
             <Button lineSpacing="1.0" mnemonicParsing="false" onAction="#dodajDoListy" prefHeight="54.0" prefWidth="63.0" text="DODAJ" />
             <Label layoutX="10.0" layoutY="94.0" />
             <Button layoutX="10.0" layoutY="111.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#przelaczDoListyKontakow" prefHeight="10.0" prefWidth="104.0" text="Lista kontaktów">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="182.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#nateraz" prefHeight="10.0" prefWidth="104.0" text="na teraz">
                <font>
                   <Font size="11.0" />
                </font>

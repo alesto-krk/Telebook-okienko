@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="przelaczanie scen dziala i zaleznosc jednej sceny od drugiej tez, ale tylko dla ostatniego elementu z listy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeleBook/sample/ScenaGlowna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeleBook/sample/ScenaGlowna.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeleBook/sample/ScenaListaKontaktow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeleBook/sample/ScenaListaKontaktow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeleBook/sample/Telebook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeleBook/sample/Telebook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeleBook/sample/listaKontaktow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeleBook/sample/listaKontaktow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ScenaGlowna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ScenaGlowna.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ScenaListaKontaktow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ScenaListaKontaktow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Telebook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Telebook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/listaKontaktow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/listaKontaktow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
     </list>
@@ -94,7 +99,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sinbilder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ListaLabeliSceneBuilder" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -224,30 +229,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="367" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1617361457644" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1616332677999">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1619114743390">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1616332677999" />
-    <state width="1323" height="144" key="GridCell.Tab.0.bottom" timestamp="1617361476023">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619114743390" />
+    <state width="1323" height="144" key="GridCell.Tab.0.bottom" timestamp="1619121184905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1611435715703" />
-    <state width="1323" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1617361476023" />
-    <state width="1323" height="144" key="GridCell.Tab.0.center" timestamp="1617361476022">
+    <state width="1323" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1619121184905" />
+    <state width="1323" height="144" key="GridCell.Tab.0.center" timestamp="1619121184905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1611435715695" />
-    <state width="1323" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1617361476022" />
-    <state width="1323" height="144" key="GridCell.Tab.0.left" timestamp="1617361476021">
+    <state width="1323" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1619121184905" />
+    <state width="1323" height="144" key="GridCell.Tab.0.left" timestamp="1619121184905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1611435715695" />
-    <state width="1323" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1617361476021" />
-    <state width="1323" height="144" key="GridCell.Tab.0.right" timestamp="1617361476023">
+    <state width="1323" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1619121184905" />
+    <state width="1323" height="144" key="GridCell.Tab.0.right" timestamp="1619121184905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1611435715703" />
-    <state width="1323" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1617361476023" />
+    <state width="1323" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1619121184905" />
     <state x="486" y="75" key="RollbackChangesDialog" timestamp="1615292522470">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -256,10 +261,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1617361473566" />
-    <state x="65" y="0" key="new project wizard" timestamp="1617099170683">
+    <state x="65" y="0" key="new project wizard" timestamp="1618511537936">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1617099170683" />
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1618511537936" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1611407377469">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

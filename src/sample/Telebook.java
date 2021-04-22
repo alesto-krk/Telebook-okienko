@@ -4,13 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Telebook {
-    private Map<String, String> kontakty = new HashMap<>();
+    private  Map<String, String> kontakty = new HashMap<>();
     private String imie = "-";
     private String numer = "--";
 
     Telebook(String imie, String numer){
         this.imie = imie;
         this.numer = numer;
+    }
+
+    Telebook(Map<String,String> kontakty){
+        this.kontakty = kontakty;
     }
 
     public String getImie() {

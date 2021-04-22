@@ -56,7 +56,7 @@
             <Label />
             <Button lineSpacing="1.0" mnemonicParsing="false" onAction="#dodajDoListy" prefHeight="54.0" prefWidth="63.0" text="DODAJ" />
             <Label layoutX="10.0" layoutY="94.0" />
-            <Button layoutX="10.0" layoutY="111.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#przelaczDoListyKontakow" prefHeight="10.0" prefWidth="104.0" text="Lista kontaktów">
+            <Button layoutX="10.0" layoutY="111.0" lineSpacing="1.0" mnemonicParsing="false" onAction="#lista" prefHeight="10.0" prefWidth="104.0" text="Lista kontaktów">
                <font>
                   <Font size="11.0" />
                </font>

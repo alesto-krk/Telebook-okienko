@@ -14,77 +14,44 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class ScenaGlowna {
 
-    List<Telebook> listaNumerow = new LinkedList<>();
+    LinkedList<Telebook> listaNumerow = new LinkedList<>();
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     @FXML
-    private TextField imie;             //----> to
+    TextField imie;
     @FXML
-    private TextField numerTelefonu;
-    @FXML
-    private Label label1, label2;
-    // List<Label> biezacaListaLabela;
+    TextField numerTelefonu;
 
     public void dodajDoListy(ActionEvent e){
         System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
+        //listaNumerow.add(imie.getText());
         listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
-        //imie.clear();
-        //numerTelefonu.clear();
-        for(Telebook l: listaNumerow) {
-            System.out.println(l.getImie());
-        }
+        imie.clear();
+        numerTelefonu.clear();
     }
 
-    /*public void biezacaLista(ActionEvent e){     //NIE DZIAALA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-        String imieScena2 = imie.getText();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("listaKontaktow.fxml"));
-        root2Sceny = loader.load();
-
-
-    }
-*/
-   /* public void nateraz(){
-        label1.setText(listaNumerow.get(0).getImie());
-        label2.setText(listaNumerow.get(1).getImie());
-        //biezacaListaLabela...........
-    }
-
-    */
-
-
-    public void przelaczDoListyKontakow(ActionEvent event) throws IOException {
-        String imieScena2 = imie.getText();
-
+    public void lista(ActionEvent event) throws IOException {
+        LinkedList<Telebook> username = listaNumerow;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("listaKontaktow.fxml"));
         root = loader.load();
-
         ScenaListaKontaktow scene2Controller = loader.getController();
-        scene2Controller.displayName(imieScena2);
+        scene2Controller.pokaz(username);
         //root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
-
-        System.out.println("przelaczono");
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("listaKontaktow.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-         */
     }
 
     public void zakoncz(){

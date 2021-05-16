@@ -39,7 +39,6 @@ public class ScenaGlowna {
         numerTelefonu.clear();
     }
 
-
     public void lista(ActionEvent event) throws IOException {
         LinkedList<Telebook> username = listaNumerow;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("listaKontaktow.fxml"));
@@ -51,6 +50,10 @@ public class ScenaGlowna {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void pokaz2(LinkedList<Telebook> lista) {
+        this.listaNumerow.addAll(lista);
     }
 
     public void zakoncz(){

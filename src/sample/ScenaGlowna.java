@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -30,13 +31,35 @@ public class ScenaGlowna {
     TextField imie;
     @FXML
     TextField numerTelefonu;
+    @FXML
+    TextField usunImie;
 
     public void dodajDoListy(ActionEvent e){
         System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
-        //listaNumerow.add(imie.getText());
         listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
         imie.clear();
         numerTelefonu.clear();
+    }
+
+    public void usun(ActionEvent e){
+        int r=0;
+        for (Telebook l : listaNumerow) {
+                if (usunImie.getText().equals(l.getImie())) {
+                    System.out.println("erased");
+                    listaNumerow.remove(l);    //TU SIE WYKRZACZA JAK SIE WPISZE W USUN PIERWSZE IMIE Z LISTY, JAK NASTEPNE TO OK
+                    r++;
+                    break;
+                    }
+        }
+        if(r==0) {
+            System.out.println("nie ma takiego kontaktu");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Coś poszło nie tak");
+            alert.setHeaderText("Nie ma takiego kontaktu");
+            alert.setContentText("");
+            alert.show();
+        }
+        usunImie.clear();
     }
 
     public void lista(ActionEvent event) throws IOException {

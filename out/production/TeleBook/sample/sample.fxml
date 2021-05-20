@@ -16,9 +16,6 @@
    <bottom>
       <Button mnemonicParsing="false" onAction="#zakoncz" text="Zakończ" BorderPane.alignment="CENTER" />
    </bottom>
-   <right>
-      <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
-   </right>
    <top>
       <HBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -69,4 +66,14 @@
    <effect>
       <SepiaTone level="0.31" />
    </effect>
+   <right>
+      <VBox prefHeight="308.0" prefWidth="129.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Usuń z listy" />
+            <TextField fx:id="usunImie" promptText="wpisz imię" />
+            <Label />
+            <Button mnemonicParsing="false" onAction="#usun" prefHeight="47.0" prefWidth="65.0" text="USUŃ" />
+         </children>
+      </VBox>
+   </right>
 </BorderPane>

@@ -26,6 +26,7 @@ public class ScenaGlowna {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    List<Telebook> listaZnalezionychNumerow = new LinkedList<>();
 
     @FXML
     TextField imie;
@@ -33,6 +34,8 @@ public class ScenaGlowna {
     TextField numerTelefonu;
     @FXML
     TextField usunImie;
+    @FXML
+    TextField szukaj;
 
     public void dodajDoListy(ActionEvent e){
         System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
@@ -77,6 +80,20 @@ public class ScenaGlowna {
 
     public void pokaz2(LinkedList<Telebook> lista) {
         this.listaNumerow.addAll(lista);
+    }
+
+    public void szukajKontakt(){
+        int r=0;
+        listaZnalezionychNumerow.clear();
+        for (Telebook l : listaNumerow) {
+            if (l.getImie().toLowerCase().contains(szukaj.getText().toLowerCase())) {
+                System.out.println("found");
+                listaZnalezionychNumerow.add(l);
+                r++;
+            }
+        }
+        if(r==0)
+            System.out.println("nie ma go w szukanych");
     }
 
     public void zakoncz(){

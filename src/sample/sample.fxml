@@ -34,10 +34,16 @@
    <center>
       <AnchorPane prefHeight="163.0" prefWidth="291.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" layoutX="1.0" layoutY="-4.0" prefHeight="314.0" prefWidth="398.0">
+            <Label layoutX="26.0" layoutY="115.0" text="Wpisz imię, którego szukasz, lub jego fragment" />
+            <ImageView fitHeight="56.0" fitWidth="48.0" layoutX="103.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lupa.jpg" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="18.0" layoutY="168.0" prefHeight="48.0" prefWidth="266.0">
                <children>
-                  <TextField />
-                  <Button mnemonicParsing="false" text="Szukaj" />
+                  <TextField fx:id="szukaj" />
+                  <Button mnemonicParsing="false" onAction="#szukajKontakt" text="Szukaj" />
                </children>
             </HBox>
          </children>
@@ -67,7 +73,7 @@
       <SepiaTone level="0.31" />
    </effect>
    <right>
-      <VBox prefHeight="308.0" prefWidth="129.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="315.0" prefWidth="152.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Usuń z listy" />
             <TextField fx:id="usunImie" promptText="wpisz imię" />

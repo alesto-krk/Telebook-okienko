@@ -58,4 +58,8 @@ public class Telebook {
         if (r == 0)
             System.out.println("Nie ma takiego kontaktu");
     }
+
+    public String toString(){
+        return this.imie + " " + this.numer;
+    }
 }

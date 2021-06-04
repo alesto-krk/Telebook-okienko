@@ -12,6 +12,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,7 +28,6 @@ public class ScenaGlowna {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    List<Telebook> listaZnalezionychNumerow = new LinkedList<>();
 
     @FXML
     TextField imie;
@@ -36,10 +37,13 @@ public class ScenaGlowna {
     TextField usunImie;
     @FXML
     TextField szukaj;
+    @FXML
+    GridPane znalezioneKontakty;
 
     public void dodajDoListy(ActionEvent e){
-        System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
+        //System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
         listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
+        System.out.println("dodano " + listaNumerow);
         imie.clear();
         numerTelefonu.clear();
     }
@@ -82,18 +86,33 @@ public class ScenaGlowna {
         this.listaNumerow.addAll(lista);
     }
 
-    public void szukajKontakt(){
-        int r=0;
-        listaZnalezionychNumerow.clear();
+    //do metody szukajKontakt:
+    public void listaZnalezionychNumerow(LinkedList<Telebook> listaZ, String fragmentZ){
+        int rowIndex = 0;
+        this.listaNumerow.addAll(listaZ);
+        System.out.println(listaNumerow);
         for (Telebook l : listaNumerow) {
-            if (l.getImie().toLowerCase().contains(szukaj.getText().toLowerCase())) {
-                System.out.println("found");
-                listaZnalezionychNumerow.add(l);
-                r++;
+            if (l.getImie().contains(fragmentZ)) {
+                Label listaLabela = new Label(rowIndex+1 + ". " + l.getImie() + " " + l.getNumer());
+                znalezioneKontakty.getChildren().add(listaLabela);
+                znalezioneKontakty.setConstraints(listaLabela, 0, rowIndex);
+                rowIndex++;
             }
         }
-        if(r==0)
-            System.out.println("nie ma go w szukanych");
+    }
+    //
+
+    public void szukajKontakt(ActionEvent event) throws IOException{
+        LinkedList<Telebook> username = listaNumerow;
+        String fragment = szukaj.getText();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        root = loader.load();
+        ScenaGlowna scene2Controller = loader.getController();
+        scene2Controller.listaZnalezionychNumerow(username, fragment);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void zakoncz(){

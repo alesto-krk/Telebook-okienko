@@ -41,11 +41,21 @@ public class ScenaGlowna {
     GridPane znalezioneKontakty;
 
     public void dodajDoListy(ActionEvent e){
-        //System.out.println("dodano " + imie.getText() + "  " + numerTelefonu.getText());
-        listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
-        System.out.println("dodano " + listaNumerow);
-        imie.clear();
-        numerTelefonu.clear();
+        //if (Character.isDigit(imie.getText().charAt(i)))
+          if (!SprawdzDane.sprawdzImie(imie.getText()))
+          { System.out.println("zle wpisane");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Coś poszło nie tak");
+            alert.setHeaderText("Imię musi zawierać tylko litery, a numer telefonu same cyfry");
+            alert.setContentText("");
+            alert.show();
+          }
+          else
+          { listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
+            System.out.println("lista " + listaNumerow);
+            imie.clear();
+            numerTelefonu.clear();
+          }
     }
 
     public void usun(ActionEvent e){

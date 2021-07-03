@@ -4,7 +4,10 @@
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="DZIALA! wszystko juz dziala, jeszcze kosmetyczne poprawki">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeleBook/sample/ScenaGlowna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeleBook/sample/ScenaGlowna.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeleBook/sample/SprawdzDane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeleBook/sample/SprawdzDane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/ScenaGlowna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ScenaGlowna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/SprawdzDane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/SprawdzDane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/listaKontaktow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/listaKontaktow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,38 +247,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1621188126096" />
-    <state width="1323" height="139" key="GridCell.Tab.0.bottom" timestamp="1622980569702">
+    <state width="1323" height="139" key="GridCell.Tab.0.bottom" timestamp="1625309327113">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="139" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1622980569702" />
-    <state width="1323" height="139" key="GridCell.Tab.0.center" timestamp="1622980569702">
+    <state width="1323" height="139" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1625309327113" />
+    <state width="1323" height="139" key="GridCell.Tab.0.center" timestamp="1625309327110">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="139" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1622980569702" />
-    <state width="1323" height="139" key="GridCell.Tab.0.left" timestamp="1622980569702">
+    <state width="1323" height="139" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1625309327110" />
+    <state width="1323" height="139" key="GridCell.Tab.0.left" timestamp="1625309327109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="139" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1622980569702" />
-    <state width="1323" height="139" key="GridCell.Tab.0.right" timestamp="1622980569702">
+    <state width="1323" height="139" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1625309327109" />
+    <state width="1323" height="139" key="GridCell.Tab.0.right" timestamp="1625309327111">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="139" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1622980569702" />
-    <state x="486" y="75" key="RollbackChangesDialog" timestamp="1615292522470">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="486" y="75" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1615292522470" />
+    <state width="1323" height="139" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1625309327111" />
     <state x="275" y="85" key="Vcs.Push.Dialog.v2" timestamp="1622813848065">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="85" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1622813848065" />
-    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622813732595">
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625309297242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1622813732595" />
-    <state x="65" y="0" key="new project wizard" timestamp="1622462946366">
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1625309297242" />
+    <state x="65" y="0" key="new project wizard" timestamp="1624911667638">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1622462946366" />
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1624911667638" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1621859116236">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

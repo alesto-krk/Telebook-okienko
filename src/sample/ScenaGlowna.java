@@ -40,22 +40,31 @@ public class ScenaGlowna {
     @FXML
     GridPane znalezioneKontakty;
 
-    public void dodajDoListy(ActionEvent e){
-        //if (Character.isDigit(imie.getText().charAt(i)))
-          if (!SprawdzDane.sprawdzImie(imie.getText()))
-          { System.out.println("zle wpisane");
+    public void dodajDoListy(ActionEvent e) {
+        if (!imie.getText().isEmpty() && !numerTelefonu.getText().isEmpty()){
+          if (!SprawdzDane.sprawdzImie(imie.getText()) || !SprawdzDane.sprawdzNumer(numerTelefonu.getText())) {
+            System.out.println("zle wpisane");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Coś poszło nie tak");
-            alert.setHeaderText("Imię musi zawierać tylko litery, a numer telefonu same cyfry");
+            alert.setHeaderText("Imię musi zawierać tylko litery (bez spacji), a numer telefonu powinien mieć cztery cyfry");
             alert.setContentText("");
             alert.show();
           }
-          else
-          { listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
+          else {
+            listaNumerow.add(new Telebook(imie.getText(), numerTelefonu.getText()));
             System.out.println("lista " + listaNumerow);
             imie.clear();
             numerTelefonu.clear();
           }
+        }
+        else {
+            System.out.println("nic nie jest wpisane");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Coś poszło nie tak");
+            alert.setHeaderText("Pola nie mogą być puste");
+            alert.setContentText("");
+            alert.show();
+        }
     }
 
     public void usun(ActionEvent e){
@@ -70,7 +79,7 @@ public class ScenaGlowna {
         }
         if(r==0) {
             System.out.println("nie ma takiego kontaktu");
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Coś poszło nie tak");
             alert.setHeaderText("Nie ma takiego kontaktu");
             alert.setContentText("");
